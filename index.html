@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El-Ataba Digital Marketplace | Capstone Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f9f7;--surf:#fff;--ink:#0f2a24;--mut:#52645e;--teal:#0b3d33;--gold:#95c93d;--brick:#0a7a5a;--line:#dce8e2;--on-teal:#f6f9f7;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#07130f;--surf:#0e211b;--ink:#e8f5ef;--mut:#9cb8ad;--teal:#0b3d33;--gold:#a6d65a;--brick:#4fd1a1;--line:#1f3b32;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#07130f;--surf:#0e211b;--ink:#e8f5ef;--mut:#9cb8ad;--brick:#4fd1a1;--line:#1f3b32;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 64px)}
+*,*:before,*:after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 "IBM Plex Sans",system-ui,sans-serif}
+body:before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--teal);z-index:30}
+h1,h2,h3{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--teal);color:var(--on-teal)}
+nav div{max-width:1100px;margin:auto;padding:0 20px;display:flex;gap:6px;align-items:center;overflow-x:auto;white-space:nowrap}
+nav b{font:800 17px "Bricolage Grotesque",sans-serif;margin-right:auto;padding:14px 12px 14px 0}
+nav a{text-decoration:none;padding:14px 10px;font-size:14px;opacity:.85}
+nav a:hover{opacity:1;box-shadow:inset 0 -3px var(--gold)}
+.awning{height:5px;background:var(--brick)}
+.hero{background:#0b3d33;color:#f6f9fc;padding:72px 20px 80px;overflow:hidden}
+.wrap{max-width:1100px;margin:auto}
+.hero h1{font-size:clamp(40px,8vw,88px);font-weight:800;max-width:14ch;letter-spacing:-.02em}
+.hero p{max-width:60ch;font-size:19px;margin:22px 0 32px;color:#d6d9e8}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:#ffffff33;border:1px solid #ffffff33;max-width:860px}
+.meta div{background:var(--teal);padding:12px 16px}
+.meta small{display:block;color:#aeb4cf;font-size:13px}
+.meta span{font-weight:500}
+section{padding:72px 20px}
+section:nth-of-type(even){background:var(--surf)}
+h2{font-size:clamp(28px,4vw,44px);font-weight:800;margin-bottom:8px;letter-spacing:-.01em}
+.lead{color:var(--mut);max-width:62ch;margin:0 0 36px}
+h3{font-size:20px;font-weight:700;margin-bottom:10px}
+.g{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g,.steps,.team{perspective:1000px}.c,.team div,.steps div{transition:transform .15s ease-out,box-shadow .2s;transform-style:preserve-3d;will-change:transform}.c:hover,.team div:hover{box-shadow:0 2px 4px #0a254014,0 28px 50px -16px #0a7a5a55}.c{background:var(--surf);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:14px;padding:24px;box-shadow:0 1px 2px #0a254014,0 14px 30px -14px #0a254040}
+section:nth-of-type(even) .c{background:var(--bg)}
+.c.t{border-top-color:var(--ink)}.c.b{border-top-color:var(--brick)}
+ul{margin:0;padding-left:20px}li{margin:6px 0}
+.note{margin-top:28px;padding:14px 18px;border:1px dashed var(--brick);border-radius:4px;color:var(--mut);font-size:15px}
+.steps{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));counter-reset:s}
+.steps div{padding:20px;border-top:6px solid var(--teal);background:var(--surf);border-right:1px solid var(--line);counter-increment:s}
+.steps div:before{content:"Stage " counter(s);display:block;font-size:13px;color:var(--brick);font-weight:500}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.tags li{margin:0;background:var(--teal);color:var(--on-teal);padding:8px 16px;border-radius:99px;font-weight:500}
+.tags small{opacity:.75;font-weight:400}
+.tbl{overflow-x:auto}
+.sdg{font:800 34px "Bricolage Grotesque",sans-serif;color:var(--brick)}
+.team{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.team div{border:2px solid var(--teal);padding:20px;border-radius:4px;background:var(--surf)}
+.team i{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--gold);color:#1d2233;font:800 22px "Bricolage Grotesque",sans-serif;font-style:normal;margin-bottom:12px}
+.team b{font:700 18px "Bricolage Grotesque",sans-serif}
+footer{background:var(--teal);color:#d6d9e8;padding:36px 20px;text-align:center;font-size:15px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div><b>El-Ataba Marketplace</b><a href="#problem">Problem</a><a href="#solution">Solution</a><a href="#business">Business</a><a href="#design">System</a><a href="#build">Build</a><a href="#future">Future</a><a href="#team">Team</a></div></nav>
+
+<header class="hero"><div class="wrap"><div>
+<h1>El-Ataba Digital Marketplace</h1>
+<p>A unified online platform that connects merchants in crowded traditional markets with customers who want to search, compare, and order without walking from shop to shop.</p>
+<div class="meta">
+<div><small>School</small><span>WE School of Applied Technology</span></div>
+<div><small>Specialization</small><span>Web Development</span></div>
+<div><small>Grade</small><span>Three</span></div>
+<div><small>Team</small><span>Team 4</span></div>
+</div></div></div></header>
+<div class="awning" aria-hidden="true"></div>
+
+<section id="problem"><div class="wrap">
+<h2>The problem</h2>
+<p class="lead">Markets like El-Ataba are full of products, but finding and comparing them takes time and effort.</p>
+<div class="g">
+<div class="c b"><h3>What goes wrong</h3><ul><li>Hard to find specific products</li><li>Heavy congestion</li><li>Time lost moving between shops</li><li>Hard to compare prices across merchants</li><li>Merchants struggle to reach customers beyond the physical market</li></ul></div>
+<div class="c t"><h3>Who we serve</h3><p><b>Customers</b> who want to search, compare prices, and order without walking through the market.</p><p><b>Merchants</b> who want to display products online and reach a wider customer base.</p></div>
+<div class="c"><h3>How we learn about users</h3><ul><li>Interviews with merchants and customers</li><li>Surveys of both groups</li><li>Observing shopping in traditional markets</li><li>Studying similar online platforms</li></ul></div>
+<div class="c"><h3>Evidence we will collect</h3><ul><li>Photos and field notes of congestion, where permitted</li><li>Merchant and customer responses</li><li>Survey results on search and price comparison</li><li>Time and effort needed to find products</li></ul></div>
+</div>
+<p class="note">Interview and survey findings will be added only after the research is done. No results are reported before then.</p>
+</div></section>
+
+<section id="solution"><div class="wrap">
+<h2>The solution</h2>
+<p class="lead">One platform that brings merchants and products together. Customers search, compare, and order. Merchants list products and manage orders. Each role gets its own account.</p>
+<div class="g">
+<div class="c t"><h3>What makes it different</h3><ul><li>Products from many merchants in one place</li><li>Easier product search</li><li>Product and price comparison</li><li>Online display for merchants</li><li>Order management and status tracking</li></ul></div>
+<div class="c"><h3>Alternatives we will study</h3><ul><li><b>Amazon:</b> general e-commerce</li><li><b>Jumia:</b> online shopping across categories</li><li><b>Cartona:</b> connects businesses and merchants in consumer goods</li><li><b>Physical markets:</b> the current default</li></ul><p style="color:var(--mut);font-size:15px;margin:10px 0 0">Compared on product presentation, ease of use, order management, delivery, and target users.</p></div>
+</div>
+</div></section>
+
+<section id="business"><div class="wrap">
+<h2>Business model</h2>
+<p class="lead">The platform earns by connecting merchants with customers. These ideas are proposals that must be validated with research.</p>
+<div class="g">
+<div class="c"><h3>Customer segments</h3><ul><li>Customers who shop in traditional markets</li><li>Small and medium merchants and shop owners</li></ul></div>
+<div class="c"><h3>Value propositions</h3><ul><li><b>Customers:</b> easier discovery, comparison, ordering from home</li><li><b>Merchants:</b> online storefront and more visibility</li></ul></div>
+<div class="c"><h3>Channels</h3><ul><li>Web platform (main channel)</li><li>Social media pages</li><li>Direct merchant outreach</li><li>Digital campaigns and referrals</li></ul></div>
+<div class="c"><h3>Customer relationships</h3><ul><li>Self-service accounts</li><li>Support through contact options</li><li>Merchant onboarding and guidance</li><li>Order status updates, if implemented</li></ul></div>
+<div class="c b"><h3>Revenue streams</h3><ul><li>Commission on completed orders</li><li>Optional merchant subscriptions</li><li>Optional paid featured listings</li></ul></div>
+<div class="c"><h3>Key resources</h3><ul><li>Website and source code</li><li>Database of users, products, orders</li><li>Development team</li><li>Hosting, domain, tools</li></ul></div>
+<div class="c"><h3>Key activities</h3><ul><li>Build and maintain the platform</li><li>Onboard merchants</li><li>Manage accounts, products, orders</li><li>Support, promotion, feedback</li></ul></div>
+<div class="c"><h3>Key partnerships</h3><ul><li>Merchants and shop owners</li><li>Couriers, if delivery is included</li><li>Payment providers, if payment is added</li><li>Hosting providers, market associations</li></ul></div>
+<div class="c"><h3>Cost structure</h3><ul><li>Development and maintenance</li><li>Domain and hosting</li><li>Marketing and acquisition</li><li>Support and updates</li><li>Payment fees, if used</li></ul></div>
+</div>
+<h3 style="margin:48px 0 16px">Sustainable Development Goals</h3>
+<div class="g">
+<div class="c"><div class="sdg">SDG 8</div><h3>Decent Work and Economic Growth</h3><p>Helps merchants reach more customers and grow sales.</p></div>
+<div class="c"><div class="sdg">SDG 9</div><h3>Industry, Innovation and Infrastructure</h3><p>Uses digital technology to improve product display and order management.</p></div>
+<div class="c"><div class="sdg">SDG 10</div><h3>Reduced Inequalities</h3><p>Gives small merchants a digital channel beyond physical visits.</p></div>
+<div class="c"><div class="sdg">SDG 11</div><h3>Sustainable Cities and Communities</h3><p>May ease the difficulty of shopping in crowded markets.</p></div>
+</div>
+</div></section>
+
+<section id="design"><div class="wrap">
+<h2>System design</h2>
+<p class="lead">Requirements, technology, data, and the people who use the system.</p>
+<div class="g">
+<div class="c t"><h3>Functional requirements</h3><ul><li>Sign up and log in</li><li>Merchants add, edit, delete products</li><li>Search and filter by category or price</li><li>Product details and prices</li><li>Create orders and show status</li><li>Merchants manage their orders</li><li>Admin manages users, products, orders</li><li>Admin dashboard statistics</li><li>Export selected data to Excel</li><li>Courier order view, if in final scope</li></ul></div>
+<div class="c t"><h3>Quality requirements</h3><ul><li><b>Usability:</b> clear and easy to learn</li><li><b>Security:</b> protect accounts and data</li><li><b>Performance:</b> reasonable load times</li><li><b>Reliability:</b> correct data, few errors</li><li><b>Maintainability:</b> organized code</li><li><b>Scalability:</b> room for new features</li><li><b>Compatibility:</b> works on all screen sizes</li></ul></div>
+</div>
+<h3 style="margin:40px 0 14px">Technology</h3>
+<ul class="tags"><li>HTML <small>structure</small></li><li>CSS <small>styling</small></li><li>JavaScript <small>interaction</small></li><li>PHP <small>server logic</small></li><li>MySQL <small>data</small></li><li>XAMPP <small>local environment</small></li><li>VS Code <small>editor</small></li></ul>
+<h3 style="margin:40px 0 14px">Database tables (MySQL)</h3>
+<div class="g">
+<div class="c"><h3>Users</h3><ul><li>User ID</li><li>Name</li><li>Email</li><li>Account type</li></ul></div>
+<div class="c"><h3>Products</h3><ul><li>Product ID, name, description</li><li>Price, available quantity</li><li>Category</li><li>Merchant ID</li></ul></div>
+<div class="c"><h3>Orders</h3><ul><li>Order ID, customer ID</li><li>Order date</li><li>Total price</li><li>Order status</li></ul></div>
+<div class="c"><h3>Order items</h3><ul><li>Item ID, order ID, product ID</li><li>Quantity</li><li>Product price at order time</li></ul></div>
+<div class="c"><h3>Deliveries</h3><ul><li>Delivery ID, order ID</li><li>Courier ID</li><li>Delivery status</li></ul></div>
+</div>
+<p class="note">The final structure and relationships are set during database design, starting with an ERD.</p>
+<h3 style="margin:40px 0 14px">User roles</h3>
+<div class="g">
+<div class="c b"><h3>Customer</h3><ul><li>Create account, log in</li><li>Search and view products</li><li>Place and track orders</li></ul></div>
+<div class="c b"><h3>Merchant</h3><ul><li>Add, edit, delete products</li><li>Manage orders for their products</li><li>Update product information</li></ul></div>
+<div class="c b"><h3>Courier (if in scope)</h3><ul><li>View assigned orders</li><li>Access delivery information</li><li>Update delivery status</li></ul></div>
+<div class="c b"><h3>Administrator</h3><ul><li>Manage accounts</li><li>Monitor products and orders</li><li>Dashboard, statistics, export</li></ul></div>
+</div>
+<h3 style="margin:40px 0 14px">Pages and experience</h3>
+<div class="g">
+<div class="c"><h3>Main pages</h3><p>Home, login, registration, products, product details, search, cart or order page, order tracking, merchant dashboard, administrator dashboard. A courier dashboard is added only if courier management is in scope.</p></div>
+<div class="c"><h3>User experience</h3><p>Products are grouped in categories and show name, price, image, and description. Clear buttons handle searching, adding products, confirming orders, and tracking status. Each role sees only the functions it is allowed to use.</p></div>
+<div class="c"><h3>Prototype and usability</h3><p>A prototype of the home, products, details, login, registration, merchant, orders, and admin pages is shown to target users. They try tasks like finding a product or checking an order. Their feedback shapes the final design. Ease of use is not claimed until tested.</p></div>
+</div>
+</div></section>
+
+<section id="build"><div class="wrap">
+<h2>Build and test</h2>
+<p class="lead">Five stages from planning to improvement.</p>
+<div class="steps">
+<div><h3>Planning</h3><p>Identify the problem and needs, define scope, split tasks.</p></div>
+<div><h3>Design</h3><p>Design interfaces, pages, database, and table relationships.</p></div>
+<div><h3>Development</h3><p>Build pages with HTML, CSS, JavaScript. Add PHP and MySQL. Connect them.</p></div>
+<div><h3>Testing</h3><p>Test main functions, fix errors, check data and permissions.</p></div>
+<div><h3>Improvement</h3><p>Collect feedback, improve, document results and challenges.</p></div>
+</div>
+<div class="g" style="margin-top:36px">
+<div class="c t"><h3>Tests</h3><ul><li><b>Functional:</b> features match requirements</li><li><b>Database:</b> data stored and updated correctly</li><li><b>Authorization:</b> users access only their role’s functions</li><li><b>Validation:</b> invalid data is rejected</li><li><b>Usability:</b> users finish essential tasks</li><li><b>Error:</b> failures do not break other functions</li></ul></div>
+<div class="c b"><h3>Security</h3><ul><li>Validate user input</li><li>Store passwords securely</li><li>Use prepared statements against SQL injection</li><li>Check permissions before every operation</li><li>Block access to private information</li><li>Test that users cannot change data they do not own</li></ul></div>
+<div class="c"><h3>Expected outcomes</h3><ul><li>Easier access to products</li><li>Less time and effort searching</li><li>Merchants display products online</li><li>Organized order management</li><li>Clearer delivery tracking, if implemented</li></ul><p style="color:var(--mut);font-size:15px;margin:10px 0 0">These are intended outcomes, evaluated after testing.</p></div>
+<div class="c"><h3>How we measure success</h3><ul><li>Users who tried the platform</li><li>Merchants who added products</li><li>Users finding what they need</li><li>Successful order rate</li><li>Errors during use</li><li>Feedback and task ease</li></ul></div>
+</div>
+</div></section>
+
+<section id="future"><div class="wrap">
+<h2>Challenges, risks, and what’s next</h2>
+<p class="lead">What could go wrong, how we plan for it, and where the project can grow.</p>
+<div class="g">
+<div class="c b"><h3>Challenges</h3><ul><li><b>Collecting user information:</b> plan interviews early, keep questions short, use surveys</li><li><b>Database organization:</b> draw an ERD first</li><li><b>Permissions:</b> define them clearly, test each role</li><li><b>Time management:</b> clear tasks, owners, regular reviews</li></ul></div>
+<div class="c b"><h3>Risks</h3><ul><li><b>Too few merchants:</b> reach out and adapt to feedback</li><li><b>Wrong product data:</b> validate and allow updates</li><li><b>Order errors:</b> test creation and status changes</li><li><b>Security issues:</b> apply protections and test them</li><li><b>Hard to use:</b> keep it simple, test with users</li></ul></div>
+<div class="c t"><h3>Future improvements</h3><ul><li>Ratings and reviews</li><li>Advanced search filters</li><li>Electronic payment, after security review</li><li>Detailed reports for merchants and admins</li><li>Inventory tools</li><li>New categories and more markets</li></ul></div>
+<div class="c t"><h3>Meeting users’ needs</h3><ul><li><b>Collect:</b> interviews, surveys, observation</li><li><b>Test:</b> prototype and system with target groups</li><li><b>Improve:</b> update design from feedback</li></ul><p style="margin:10px 0 0">Development follows real needs, not only team assumptions.</p></div>
+</div>
+<h3 style="margin:40px 0 10px">Expected impact</h3>
+<p style="max-width:70ch">The platform may make shopping in traditional markets easier and give merchants another way to reach customers. Its real impact depends on how widely it is used and how much customers and merchants benefit.</p>
+</div></section>
+
+<section id="team"><div class="wrap">
+<h2>Team 4</h2>
+<p class="lead">Four students at WE School of Applied Technology, Web Development, Grade Three.</p>
+<div class="team">
+<div><i>A</i><b>Asil Ahmed</b></div>
+<div><i>S</i><b>Seif Saleh</b></div>
+<div><i>A</i><b>Adam Amr</b></div>
+<div><i>A</i><b>Ahmed Mahmoud</b></div>
+</div>
+<h3 style="margin:40px 0 10px">Conclusion</h3>
+<p style="max-width:70ch">El-Ataba Digital Marketplace helps organize shopping in crowded traditional markets by connecting merchants with customers. Users browse and search products, merchants manage products and orders, and each role has its own functions. The project will be developed and evaluated against real user needs and test results so the solution works in practice and can keep growing.</p>
+<h3 style="margin:40px 0 10px">Research sources</h3>
+<p style="max-width:70ch;color:var(--mut)">UN Sustainable Development Goals website, official PHP and MySQL documentation, official sites of Amazon, Jumia, and Cartona, and the team’s own interviews, surveys, and field observations.</p>
+</div></section>
+
+<footer>El-Ataba Digital Marketplace · Capstone Portfolio · Team 4 · WE School of Applied Technology</footer>
+<script>if(!matchMedia('(prefers-reduced-motion:reduce)').matches&&matchMedia('(hover:hover)').matches){document.querySelectorAll('.c,.team div,.steps div').forEach(function(e){e.addEventListener('pointermove',function(v){var r=e.getBoundingClientRect(),x=(v.clientX-r.left)/r.width-.5,y=(v.clientY-r.top)/r.height-.5;e.style.transform='perspective(800px) rotateX('+(-y*9)+'deg) rotateY('+(x*9)+'deg) translateZ(8px)'});e.addEventListener('pointerleave',function(){e.style.transform=''})})}</script></body>
+</html>
